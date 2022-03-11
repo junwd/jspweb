@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>from和input标记的应用</title>
+    <meta http-equiv=content-type content="text/html; charset=gb2312">
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=GBK">
+    
+
+  </head>
+  
+  <body>
+    <form action=data/abc.html method=post name=frm>
+    	<textarea name=txarea rows=7 cols=42>请在此处写下你的宝贵意见:</textarea><br>
+    	<br>
+    		<table cellspacing=0 cellspadding=0 width=480 border=0>
+    	<tr>
+    		<td width=100>
+    		<input type =checkbox name=ckbx value="电影" checked>电影<br>
+    		<input type =checkbox name=ckbx value="音乐" checked>音乐<br>
+    		<input type =checkbox name=ckbx value="美术" checked>美术<br>
+    		</td>
+    		<td width=100>
+    			<input type=radio name=rdo value="先生">男<br>
+    			<input type=radio name=rdo value="女生" checked>女<br>
+    		</td>
+    		<td>
+    			<img src="data/spot.jpg" width=12 height=12>账号：
+    			<input type=text size=10 name=user value=张三><br>
+    			<img src=data/spot.jpg width=12 height=12>密码：
+    			<input type=password size=10 name=pswd value=123><br><br>
+    		</td>
+    		</tr>
+    		</table>
+    			<input type=submit value=发送>
+    			<input type=reset value=重置>
+    			<input type=button value=帮助 onclick=alert("这里可以提供帮助")>
+    			<input type=hidden name=hdn value=abc><br><br>		
+    </form>
+    
+  </body>
+</html>
