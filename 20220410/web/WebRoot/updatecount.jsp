@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8" import="java.sql.*"%>
-<jsp:useBean id="db" class="dbBean.DBcon" scope="session"/>
+<jsp:useBean id="db" class="dbBean.DBcon" scope="session" />
 <% //更新投票项计数
     String id = request.getParameter("id");
     ResultSet rs = db.executeQuery("select * from vote where id=" + id);
@@ -10,4 +10,4 @@
     rs.close();
 db.close();
 %>
-<jsp:forward page="info.jsp"/>
+<jsp:forward page="info.jsp" />

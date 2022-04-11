@@ -1,5 +1,5 @@
-<%@ page contentType="text/html;charset=utf-8" import="java.sql.*" %>
-<jsp:useBean id="db" class="dbBean.DBcon" scope="session"/>
+<%@ page contentType="text/html;charset=utf-8" import="java.sql.*"%>
+<jsp:useBean id="db" class="dbBean.DBcon" scope="session" />
 <%
     String delid = request.getParameter("delid");
     if (delid!= null) {
@@ -7,4 +7,4 @@
         db.close();
     }
 %>
-<jsp:forward page="manage.jsp"/>
+<jsp:forward page="manage.jsp" />

@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=utf-8" import="java.sql.*"%>
+<%@ page contentType="text/html; charset=utf-8" import="java.sql.*"%>
 
 <jsp:useBean id="db" class="dbBean.DBcon" scope="session" />
 <% String user = request.getParameter("user");
@@ -10,14 +10,14 @@
         db.close();
         session.setAttribute("admin", "ok");
 %>
-<jsp:forward page= "manage.jsp"/>
+<jsp:forward page="manage.jsp" />
 <%
 } else {
     rs.close();
     db.close();
 %>
 <jsp:forward page="login.jsp">
-    <jsp:param name="warning" value="对不起，您的用户名或密码不正确！"/>
+	<jsp:param name="warning" value="对不起，您的用户名或密码不正确！" />
 </jsp:forward>
 <%
     }

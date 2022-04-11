@@ -11,7 +11,7 @@ public class DBcon {
     private String driverStr = "com.mysql.jdbc.Driver";
     private String connStr = "jdbc:mysql://localhost:3306/votedb?useUnicode=true&characterEncoding=utf-8";
     private static final String DATABASE_USRE = "root";
-    private static final String DATABASE_PASSWORD ="";
+    private static final String DATABASE_PASSWORD ="root";
     private Connection conn = null;
     private Statement stmt = null;
 

@@ -1,6 +1,7 @@
-<%@ page contentType="text/html; charset=utf-8" import="java.sql.*"%>
+<%@ page contentType="text/html; pageEncoding=UTF-8" import="java.sql.*"%>
 <jsp:useBean id="db" class="dbBean.DBcon" scope="session" />
 <%
+    request.setCharacterEncoding("utf-8");
     String additem=request.getParameter("additem");
     
     if (additem!= null) 
@@ -10,4 +11,4 @@
         db.close();
     }
 %>
-<jsp:forward page = "manage.jsp"/>
+<jsp:forward page="manage.jsp" />
