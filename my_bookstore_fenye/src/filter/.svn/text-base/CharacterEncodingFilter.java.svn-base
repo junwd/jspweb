@@ -1,0 +1,74 @@
+package filter;
+
+import java.io.IOException;
+
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class CharacterEncodingFilter implements Filter {
+
+	public void destroy() {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void doFilter(ServletRequest request, ServletResponse response,
+			FilterChain chain) throws IOException, ServletException {
+		request.setCharacterEncoding("gbk");
+		HttpServletRequest req = (HttpServletRequest) request;
+		HttpServletResponse res = (HttpServletResponse) response;
+		String basePath = req.getScheme()+"://"+req.getServerName()+":"+req.getServerPort()+req.getContextPath()+"/";
+		String url = req.getRequestURL().toString();
+		String is_doc = url.substring(url.length()-4,url.length());
+		
+		String str1 = (String) req.getSession().getAttribute("username");
+		
+		if(is_doc.equals(".doc")){
+			
+			chain.doFilter(request, response);
+			return;
+		}
+		
+		if(is_doc.equals(".zip")){
+			
+			chain.doFilter(request, response);
+			return;
+		}
+		
+		
+		if (str1 != null
+				|| url.equals(basePath+"login.jsp")
+				|| url.equals(basePath+"js/loginVali.js")
+				|| url.equals(basePath+"ImageServlet")
+				|| url.equals(basePath+"images/reset.jpg")
+				|| url.equals(basePath+"images/loginback.jpg")
+				|| url.equals(basePath+"images/login.png")
+				|| url.equals(basePath+"checklogin")
+				|| url.equals(basePath+"loginOpe.do")
+				|| url.equals(basePath+"AllDownload")
+				|| url.equals(basePath+"LiTiServlet")
+				|| url.equals(basePath+"RenwuShuServlet")
+				|| url.equals(basePath+"test/login.jsp")
+				|| url.equals(basePath+"test/logintest.do")
+				|| url.equals(basePath+"test/logintest.jsp")) {
+ 
+			chain.doFilter(request, response);
+
+		} else {
+				res.sendRedirect("/bysj/login.jsp");
+		}
+			
+	}
+
+	public void init(FilterConfig arg0) throws ServletException {
+		// TODO Auto-generated method stub
+
+	}
+
+}
