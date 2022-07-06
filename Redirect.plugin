@@ -11,7 +11,7 @@
 #^http:\/\/(www.)?taobao\.com\/ https://taobao.com/ 302
 
 # ph xxx (pornhub)
-^https:\/\/duckduckgo.com\/\?q=ph\+([^&]+).+ url 302 https://cn.pornhub.com/video/search?search=$1
+^https:\/\/duckduckgo.com\/\?q=ph\+([^&]+).+ https://cn.pornhub.com/video/search?search=$1 302
 
 # bd xxx (百度)
 ^https:\/\/duckduckgo.com\/\?q=bd\+([^&]+).+ 302 https://www.baidu.com/s?wd=$1
