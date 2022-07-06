@@ -1,0 +1,23 @@
+#!name= Redirect
+#!desc= 最后更新时间 2022-06-30 22:48:37
+#!openUrl= https://github.com/blackmatrix7/ios_rule_script
+#!homepage= https://github.com/blackmatrix7/ios_rule_script
+#!mitm= 1
+
+
+
+[URL Rewrite]
+#^http:\/\/(www.)?aicoin\.cn\/$ https://www.aicoin.com/ 302
+#^http:\/\/(www.)?taobao\.com\/ https://taobao.com/ 302
+
+# ph xxx (pornhub)
+^https:\/\/duckduckgo.com\/\?q=ph\+([^&]+).+ url https://cn.pornhub.com/video/search?search=$1 302
+
+# bd xxx (百度)
+^https:\/\/duckduckgo.com\/\?q=bd\+([^&]+).+ url https://www.baidu.com/s?wd=$1 302
+
+# gh xxx (GitHub)
+^https:\/\/duckduckgo.com\/\?q=gh\+([^&]+).+ url https://github.com/search?q=$1 302
+
+[MITM]
+hostname = duckduckgo.com
