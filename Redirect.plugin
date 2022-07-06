@@ -7,17 +7,15 @@
 
 
 [URL Rewrite]
-#^http:\/\/(www.)?aicoin\.cn\/$ https://www.aicoin.com/ 302
-#^http:\/\/(www.)?taobao\.com\/ https://taobao.com/ 302
 
 # ph xxx (pornhub)
-^https:\/\/duckduckgo.com\/\?q=ph\+([^&]+).+ https://cn.pornhub.com/video/search?search=$1 302
+^https?:\/\/duckduckgo.com\/\?q=ph\+([^&]+).+ https://cn.pornhub.com/video/search?search=$1 302
 
 # bd xxx (百度)
-^https:\/\/duckduckgo.com\/\?q=bd\+([^&]+).+ 302 https://www.baidu.com/s?wd=$1
+^https:\/\/duckduckgo.com\/\?q=bd\+([^&]+).+ https://www.baidu.com/s?wd=$1 302 
 
 # gh xxx (GitHub)
-^https:\/\/duckduckgo.com\/\?q=gh\+([^&]+).+ url https://github.com/search?q=$1 302
+^https:\/\/duckduckgo.com\/\?q=gh\+([^&]+).+ https://github.com/search?q=$1 302
 
 [MITM]
 hostname = duckduckgo.com
